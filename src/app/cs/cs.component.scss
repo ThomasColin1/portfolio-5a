@@ -1,0 +1,41 @@
+.main {
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(
+      to right,
+      #011c24 0%,
+      #011c24 50%,
+      #dbebf1 50%,
+      #dbebf1 100%,
+    );
+  }
+  .navbar{
+      height:18vh;
+  }
+  .navbar-toggler{
+      border:0;
+  }
+  .navbar-toggler:focus{
+      box-shadow: none;
+  }
+  p {
+    color:white;
+  }
+  .color-secondary {
+    color: #011c24;
+  }
+  .card{
+    background-color: #dbebf1;
+    box-shadow: 5px 5px 5px black;
+  }
+  .light{
+    .card {
+      
+    background-color: #dbebf1;
+    // background-color: #011c24;
+    border: solid 1px #011c24;
+    box-shadow: 5px 5px 5px #011c248d;
+    }
+  }

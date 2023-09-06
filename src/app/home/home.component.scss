@@ -1,0 +1,45 @@
+.main {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    to right,
+    #011c24 0%,
+    #011c24 65%,
+    #dbebf1 65%,
+    #dbebf1 100%,
+  );
+}
+.row {
+    margin-top:10vh;
+    width:100%
+}
+.profile {
+    height:30vw;
+    object-fit: cover;
+    margin-top:-100px;
+}
+.profile-background{
+    position: absolute;
+    
+}
+p {
+    color: white;
+    
+    color: #BDC2BF;
+    color:white;
+}
+.bottom-row{
+    padding:5em;
+    padding-top:0;
+    padding-bottom:3em;
+    margin-top:2em
+}
+.secondary-color {
+    
+    color:#011c24,
+}
+.white-link {
+    color:white;
+}
