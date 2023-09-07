@@ -1,33 +1,36 @@
 
-<div class="main">
-  <div class="navbar navbar-light">
-    <p class="h1 mx-5">Perso</p>
-    <button class="navbar-toggler mx-5" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-  <div class="row">
-
-    <div class="offset-1 col-5 pl-5 pt-5">
-      <p class="h1 align-middle">Etudiant Ingénieur <br /> en informatique</p>
-      <p class="h2 align-middle">à l'<span class="fw-bold">INSA de Lyon.</span></p>
-      <p class="h5 mt-4">Je suis en recherche d'un <span class="fw-bold">Projet de Fin d'Etudes.</span></p>
-    </div>
-    <div class="col-2">
-      <img class="profile" src="../assets/photo7.png" alt="profile picture" />
-      <!-- <img src="../assets/photoback.svg" class="profile-background"/> -->
-    </div>
-  </div>
-  <div class="row bottom-row">
-    <div class="col-6">
-      <p class="h6">J'ai pu mener pendant ces années de nombreux projets informatiques, qu'ils soient scolaires ou personnels.</p>
-      <p class="h5 text-decoration-underline">Mes projets et compétences en informatique ↓</p>
-    </div>
-    <div class="col-3 offset-3">
-      <p class="h6 secondary-color">J'ai 21 ans, et serai diplômé en 2024. Je suis passionné de musique.</p>
-      <p class="h5 secondary-color text-decoration-underline">En savoir plus sur moi ↓</p>
+<div class="main" [ngStyle]="main">
+  <navbar-component
+  (animationHome)="StartAnimation(20,65,'/')"
+  (animationCs)="StartAnimation(20,50,'/cs')"
+  (animationPersonal)="undefined"
+  ></navbar-component>
+  
+  <div class="row" [@fadeIn] [@fadeOut]="state">
+    <div class="col-8 offset-3">
+      <h3>Qui suis-je ?</h3>
+      <p>Je suis Colin THOMAS, élève étudiant à l'INSA de Lyon, actuellement en échange à NTNU, Trondheim, Norvège.
+        <br/>
+        Je suis à la recherche d'un P.F.E (Projet de Fin d'Etude), qui pourrait éventuellement déboucher sur un premier emploi.
+        
+      </p>
+      <h4>Passionné de musique </h4>
+      <ul>
+        <li>
+          12 ans de piano
+        </li>
+        <li>
+          4 ans de saxophone
+        </li>
+        <li>
+          Production de musique assistée par ordinateur
+        </li>
+        <li>
+          Section Musique-Etude de l'INSA de Lyon
+        </li>
+      </ul>
+      <h4>Mon parcours scolaire</h4>
+      <img src="../../assets/timeline.png" class="timeline"/>
     </div>
   </div>
 </div>

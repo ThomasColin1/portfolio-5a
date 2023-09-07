@@ -1,9 +1,21 @@
 
   <div class="navbar navbar-light">
     <p class="h1 mx-5">Colin</p>
-    <button class="navbar-toggler mx-5" type="button" data-bs-toggle="collapse"
+    <button mat-button [matMenuTriggerFor]="menu" class="navbar-toggler mx-5" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <!-- <button mat-button [matMenuTriggerFor]="menu">Menu</button> -->
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="animate('home')">
+        <a>Accueil</a>
+      </button>
+      <button mat-menu-item (click)="animate('cs')">
+        <a>Projets</a>
+      </button>
+      <button mat-menu-item (click)="animate('personal')">
+        <a>A propos</a>
+      </button>
+    </mat-menu>
   </div>
