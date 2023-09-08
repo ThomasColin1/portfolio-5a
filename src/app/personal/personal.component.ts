@@ -36,10 +36,6 @@ export class PersonalComponent {
   state='void';
 
   main = {
-    "height": "100%",
-    "min-height": "100vh",
-    "margin": "0",
-    "padding": "0",
     "background": "linear-gradient(to right,#011c24 0%,#011c24 20%,#dbebf1 20%,#dbebf1 100%)"
   }
 
@@ -51,10 +47,6 @@ export class PersonalComponent {
       await this.delay(10);
       console.log(i)
       this.main = {
-        "height": "100%",
-        "min-height": "100vh",
-        "margin": "0",
-        "padding": "0",
         "background": "linear-gradient(to right,#011c24 0%,#011c24 "+String(origin-i*(origin-destination)/15)+"%,#dbebf1 "+String(origin-i*(origin-destination)/15)+"%,#dbebf1 100%)"
       }
       // this.transparency = {

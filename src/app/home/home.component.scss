@@ -1,6 +1,6 @@
 .main {
-    height: 100%;
-    min-height: 100vh;
+    // height: 100%;
+    // min-height: 100vh;
     margin: 0;
     padding: 0;
     background: linear-gradient(
@@ -55,4 +55,7 @@ p {
 }
 .white-link {
     color:white;
+}
+.row {
+  max-width: 100%;
 }
