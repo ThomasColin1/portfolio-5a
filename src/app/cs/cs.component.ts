@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { AfterContentInit, AfterViewChecked, Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewChecked, Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -26,7 +26,7 @@ import { Router } from '@angular/router';
     ])
   ]
 })
-export class CsComponent {
+export class CsComponent implements OnInit {
   state="void"
   transparency = {
     "opacity":"0"
@@ -47,7 +47,6 @@ export class CsComponent {
     for(let i=0;i<15;i++){
 
       await this.delay(10);
-      console.log(i)
       this.main = {
         "background": "linear-gradient(to right,#011c24 0%,#011c24 "+String(origin-i*(origin-destination)/15)+"%,#dbebf1 "+String(origin-i*(origin-destination)/15)+"%,#dbebf1 100%)"
       }
@@ -56,5 +55,32 @@ export class CsComponent {
       }
     }
     this.router.navigateByUrl(url)
+  }
+
+  scrollable = false;
+  async ngOnInit() {
+    await this.delay(1000);
+    this.scrollable = true;
+  }
+  @HostListener('mousewheel', ['$event'])
+  onWindowScroll() {
+    if (!this.scrollable){
+      return
+    }
+  //In chrome and some browser scroll is given to body tag
+  let top = (document.documentElement.scrollTop || document.body.scrollTop)
+  let bottom = top + document.documentElement.offsetHeight;
+  let max = document.documentElement.scrollHeight-1;
+  // pos/max will give you the distance between scroll bottom and and bottom of screen in percentage.
+   if(bottom > max)   {
+    this.scrollable = false;
+    //Do your action here
+     this.StartAnimation(50,25,'/personal')
+    }
+    if(top < 1)   {
+      this.scrollable = false;
+    //Do your action here
+     this.StartAnimation(50,65,'/')
+    }
   }
 }

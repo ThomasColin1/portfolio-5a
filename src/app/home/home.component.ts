@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -40,7 +40,6 @@ export class HomeComponent {
     for(let i=0;i<15;i++){
 
       await this.delay(10);
-      console.log(i)
       this.main = {
         "background": "linear-gradient(to right,#011c24 0%,#011c24 "+String(origin-i*(origin-destination)/15)+"%,#dbebf1 "+String(origin-i*(origin-destination)/15)+"%,#dbebf1 100%)"
       }
@@ -53,5 +52,26 @@ export class HomeComponent {
 
   delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
-}
+  }
+  scrollable = false;
+  async ngOnInit() {
+    await this.delay(1000);
+    this.scrollable = true;
+  }
+
+  @HostListener('mousewheel', ['$event'])
+  onWindowScroll() {
+    if (!this.scrollable){
+      return
+    }
+  //In chrome and some browser scroll is given to body tag
+  let pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
+  let max = document.documentElement.scrollHeight-10;
+  // pos/max will give you the distance between scroll bottom and and bottom of screen in percentage.
+   if(pos > max)   {
+   //Do your action here
+    this.scrollable = false;
+    this.StartAnimation(65,50,'/cs')
+   }
+  }
 }

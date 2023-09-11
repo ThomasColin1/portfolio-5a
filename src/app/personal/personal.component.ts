@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -54,5 +54,27 @@ export class PersonalComponent {
       // }
     }
     this.router.navigateByUrl(url)
+  }
+
+  
+  scrollable = false;
+  async ngOnInit() {
+    await this.delay(1000);
+    this.scrollable = true;
+  }
+  @HostListener('mousewheel', ['$event'])
+  onWindowScroll() {
+    if (!this.scrollable){
+      return
+    }
+  //In chrome and some browser scroll is given to body tag
+  let top = (document.documentElement.scrollTop || document.body.scrollTop)
+  let bottom = top + document.documentElement.offsetHeight;
+  let max = document.documentElement.scrollHeight-1;
+    if(top < 1)   {
+      this.scrollable = false;
+    //Do your action here
+     this.StartAnimation(25,50,'/cs')
+    }
   }
 }

@@ -1,6 +1,7 @@
 .main {
     margin: 0;
     padding: 0;
+    min-height: 101%;
     background: linear-gradient(
       to right,
       #011c24 0%,
@@ -42,7 +43,7 @@ p {
 
 @media (max-width : 1200px) {
   .card{
-    width:90%;
+    width:103%;
     margin-left:10%;
   }
 

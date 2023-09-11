@@ -3,6 +3,7 @@
     // min-height: 100vh;
     margin: 0;
     padding: 0;
+    min-height:101%;
     background: linear-gradient(
       to right,
       #011c24 0%,
@@ -58,4 +59,71 @@ p {
 }
 .row {
   max-width: 100%;
+}
+
+@media (max-width : 1200px) {
+    .main {
+        min-width:100%;
+        min-height:101%;
+    }
+    .profile {
+        position: absolute;
+        height: 50vw;
+        right:3vw;
+        width:30vw;
+        top:25vh;
+        
+        
+    }
+    .row {
+        margin-top: 0;
+    }
+    .h1{
+        margin-top:3vh;
+      font-size:1.6em;
+      width:50vw;
+    }
+    .h2{
+        width:50vw;
+    font-size:1.3em;
+    }
+    .pfe{
+        position: absolute;
+        background-color: #dbebf1;
+        // border:dashed 2px #011c24;
+             text-align: center;
+        top:45vh;
+        left:15vw;
+        width:70vw;
+        margin:auto;
+    font-size:1.4em;
+    color:#011c24;
+    padding:1vw;
+	border: 3px solid;
+        border-image: linear-gradient(45deg, #8a9497, #011c24) 1;
+    }
+    .bottom-row{
+        margin-top:35vh;
+        padding:0vw;
+        margin-bottom:0;
+        margin-right:0;
+        width:100%;
+        margin-right:0;
+        .offset-3{
+            margin-left:15vw;
+            width:32vw;
+        }
+        .h6{
+            
+            font-size: 1em;
+        }
+        .col-6{
+            width:47vw;
+            margin-left:5vw;
+        }
+        .h5{
+
+            font-size: 1em;
+        }
+    }
 }
