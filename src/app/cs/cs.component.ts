@@ -68,7 +68,7 @@ export class CsComponent implements OnInit {
     }
   }
   @HostListener('mousewheel', ['$event'])
-  onWindowScroll() {
+  onWindowScroll($event:any) {
     if (!this.scrollable){
       return
     }
@@ -77,12 +77,12 @@ export class CsComponent implements OnInit {
   let bottom = top + document.documentElement.offsetHeight;
   let max = document.documentElement.scrollHeight-1;
   // pos/max will give you the distance between scroll bottom and and bottom of screen in percentage.
-   if(bottom > max)   {
+   if(bottom > max  && $event.wheelDeltaY<=-7)   {
     this.scrollable = false;
     //Do your action here
      this.StartAnimation(50,this.personalDarkWidth,'/personal')
     }
-    if(top < 1)   {
+    if(top < 1 && $event.wheelDeltaY>=7)   {
       this.scrollable = false;
     //Do your action here
      this.StartAnimation(50,65,'/')

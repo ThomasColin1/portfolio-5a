@@ -75,8 +75,7 @@ export class PersonalComponent {
     
   }
   @HostListener('mousewheel', ['$event'])
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll() {
+  onWindowScroll($event:any) {
     if (!this.scrollable){
       return
     }
@@ -84,7 +83,7 @@ export class PersonalComponent {
   let top = (document.documentElement.scrollTop || document.body.scrollTop)
   let bottom = top + document.documentElement.offsetHeight;
   let max = document.documentElement.scrollHeight-1;
-    if(top < 1)   {
+    if(top < 1 && $event.wheelDeltaY>=7)   {
       this.scrollable = false;
     //Do your action here
      this.StartAnimation(this.darkWidth,50,'/cs')

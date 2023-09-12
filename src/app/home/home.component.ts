@@ -65,7 +65,8 @@ export class HomeComponent {
   }
 
   @HostListener('mousewheel', ['$event'])
-  onWindowScroll() {
+  onWindowScroll($event:any) {
+    // console.log($event)
     if (!this.scrollable){
       return
     }
@@ -73,7 +74,7 @@ export class HomeComponent {
   let pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
   let max = document.documentElement.scrollHeight-10;
   // pos/max will give you the distance between scroll bottom and and bottom of screen in percentage.
-   if(pos > max)   {
+   if(pos > max && $event.wheelDeltaY<=-7){
    //Do your action here
     this.scrollable = false;
     this.StartAnimation(65,50,'/cs')
