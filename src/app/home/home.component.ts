@@ -56,7 +56,7 @@ export class HomeComponent {
   scrollable = false;
   personalDarkWidth=20;
   async ngOnInit() {
-    await this.delay(1000);
+    await this.delay(2000);
     this.scrollable = true;
     
     if(window.innerWidth<1200){

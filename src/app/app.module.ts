@@ -11,6 +11,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatStepperModule } from '@angular/material/stepper';
+import { StepperComponent } from './stepper/stepper.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     HomeComponent,
     PersonalComponent,
     CsComponent,
-    NavbarComponent
+    NavbarComponent,
+    StepperComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     NgbModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatStepperModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

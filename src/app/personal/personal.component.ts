@@ -70,11 +70,12 @@ export class PersonalComponent {
         "background": "linear-gradient(to right,#004A5E 0%,#004A5E 40%,#d6dde0 40%,#d6dde0 100%)"
       }
     }
-    await this.delay(1000);
+    await this.delay(2000);
     this.scrollable = true;
     
   }
   @HostListener('mousewheel', ['$event'])
+  @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     if (!this.scrollable){
       return

@@ -1,0 +1,23 @@
+.stepper {
+  position:fixed;
+  top:39vh;
+  right:0.5em;
+  background-color: transparent;
+  width:2em;
+
+}
+.turned{
+  transform: scale(75%) rotate(45deg);
+
+}
+.blue {
+  
+  color:#004A5E;
+}
+
+@media (max-width : 1200px) {
+  .stepper {
+    right:0em;
+    width:1.5em;
+  }
+}
