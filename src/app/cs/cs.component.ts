@@ -33,7 +33,7 @@ export class CsComponent implements OnInit {
   }
 
   main = {
-    "background": "linear-gradient(to right,#011c24 0%,#011c24 50%,#dbebf1 50%,#dbebf1 100%)"
+    "background": "linear-gradient(to right,#004A5E 0%,#004A5E 50%,#d6dde0 50%,#d6dde0 100%)"
   }
   constructor(private router:Router){}
 
@@ -48,7 +48,7 @@ export class CsComponent implements OnInit {
 
       await this.delay(10);
       this.main = {
-        "background": "linear-gradient(to right,#011c24 0%,#011c24 "+String(origin-i*(origin-destination)/15)+"%,#dbebf1 "+String(origin-i*(origin-destination)/15)+"%,#dbebf1 100%)"
+        "background": "linear-gradient(to right,#004A5E 0%,#004A5E "+String(origin-i*(origin-destination)/15)+"%,#d6dde0 "+String(origin-i*(origin-destination)/15)+"%,#d6dde0 100%)"
       }
       this.transparency = {
         "opacity": String(1-i/30)
@@ -58,9 +58,14 @@ export class CsComponent implements OnInit {
   }
 
   scrollable = false;
+  personalDarkWidth=20;
   async ngOnInit() {
     await this.delay(1000);
     this.scrollable = true;
+    
+    if(window.innerWidth<1200){
+      this.personalDarkWidth=40;
+    }
   }
   @HostListener('mousewheel', ['$event'])
   onWindowScroll() {
@@ -75,7 +80,7 @@ export class CsComponent implements OnInit {
    if(bottom > max)   {
     this.scrollable = false;
     //Do your action here
-     this.StartAnimation(50,25,'/personal')
+     this.StartAnimation(50,this.personalDarkWidth,'/personal')
     }
     if(top < 1)   {
       this.scrollable = false;

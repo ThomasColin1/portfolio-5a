@@ -1,6 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'personal-component',
@@ -28,7 +30,7 @@ import { Router } from '@angular/router';
 })
 export class PersonalComponent {
   title = 'portfolio-5a';
-  constructor(private router:Router){}
+  constructor(private router:Router, private dialog:MatDialog){}
   delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }
@@ -36,7 +38,7 @@ export class PersonalComponent {
   state='void';
 
   main = {
-    "background": "linear-gradient(to right,#011c24 0%,#011c24 20%,#dbebf1 20%,#dbebf1 100%)"
+    "background": "linear-gradient(to right,#004A5E 0%,#004A5E 20%,#d6dde0 20%,#d6dde0 100%)"
   }
 
   async StartAnimation(origin:number,destination:number,url:string){
@@ -45,9 +47,8 @@ export class PersonalComponent {
     for(let i=0;i<15;i++){
 
       await this.delay(10);
-      console.log(i)
       this.main = {
-        "background": "linear-gradient(to right,#011c24 0%,#011c24 "+String(origin-i*(origin-destination)/15)+"%,#dbebf1 "+String(origin-i*(origin-destination)/15)+"%,#dbebf1 100%)"
+        "background": "linear-gradient(to right,#004A5E 0%,#004A5E "+String(origin-i*(origin-destination)/15)+"%,#d6dde0 "+String(origin-i*(origin-destination)/15)+"%,#d6dde0 100%)"
       }
       // this.transparency = {
       //   "opacity": String(1-i/30)
@@ -58,9 +59,20 @@ export class PersonalComponent {
 
   
   scrollable = false;
+  darkWidth=20;
+
   async ngOnInit() {
+    if(window.innerWidth<1200){
+      this.darkWidth=40;
+      
+      this.main = {
+       
+        "background": "linear-gradient(to right,#004A5E 0%,#004A5E 40%,#d6dde0 40%,#d6dde0 100%)"
+      }
+    }
     await this.delay(1000);
     this.scrollable = true;
+    
   }
   @HostListener('mousewheel', ['$event'])
   onWindowScroll() {
@@ -74,7 +86,12 @@ export class PersonalComponent {
     if(top < 1)   {
       this.scrollable = false;
     //Do your action here
-     this.StartAnimation(25,50,'/cs')
+     this.StartAnimation(this.darkWidth,50,'/cs')
     }
+  }
+  onClickImage(){
+    this.dialog.open(DialogComponent, {
+      width: '80vw',
+    });
   }
 }

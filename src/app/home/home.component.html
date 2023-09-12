@@ -3,7 +3,7 @@
   <navbar-component
   (animationHome)="undefined"
   (animationCs)="StartAnimation(65,50,'cs')"
-  (animationPersonal)="StartAnimation(65,20,'personal')"
+  (animationPersonal)="StartAnimation(65,personalDarkWidth,'personal')"
   ></navbar-component>
   <div class="row" [@fadeOut]='state' [@fadeIn]>
 
@@ -24,7 +24,7 @@
     </div>
     <div class="col-3 offset-3">
       <p class="h6 secondary-color">J'ai 21 ans, et serai diplômé en 2024. Je suis passionné de musique.</p>
-      <a class="h5 secondary-color" (click)="StartAnimation(65,20,'/personal')">En savoir plus sur moi ↓</a>
+      <a class="h5 secondary-color" (click)="StartAnimation(65,personalDarkWidth,'/personal')">En savoir plus sur moi ↓</a>
     </div>
   </div>
 </div>

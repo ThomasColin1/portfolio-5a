@@ -27,7 +27,7 @@ export class HomeComponent {
   title = 'portfolio-5a';
   state='void';
   main = {
-    "background": "linear-gradient(to right,#011c24 0%,#011c24 65%,#dbebf1 65%,#dbebf1 100%)"
+    "background": "linear-gradient(to right,#004A5E 0%,#004A5E 65%,#d6dde0 65%,#d6dde0 100%)"
   }
   // transparency = {
   //   "opacity":"1"
@@ -41,7 +41,7 @@ export class HomeComponent {
 
       await this.delay(10);
       this.main = {
-        "background": "linear-gradient(to right,#011c24 0%,#011c24 "+String(origin-i*(origin-destination)/15)+"%,#dbebf1 "+String(origin-i*(origin-destination)/15)+"%,#dbebf1 100%)"
+        "background": "linear-gradient(to right,#004A5E 0%,#004A5E "+String(origin-i*(origin-destination)/15)+"%,#d6dde0 "+String(origin-i*(origin-destination)/15)+"%,#d6dde0 100%)"
       }
       // this.transparency = {
       //   "opacity": String(1-i/30)
@@ -54,9 +54,14 @@ export class HomeComponent {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }
   scrollable = false;
+  personalDarkWidth=20;
   async ngOnInit() {
     await this.delay(1000);
     this.scrollable = true;
+    
+    if(window.innerWidth<1200){
+      this.personalDarkWidth=40;
+    }
   }
 
   @HostListener('mousewheel', ['$event'])

@@ -1,8 +1,8 @@
 
 <div class="main" [ngStyle]="main">
   <navbar-component
-  (animationHome)="StartAnimation(20,65,'/')"
-  (animationCs)="StartAnimation(20,50,'/cs')"
+  (animationHome)="StartAnimation(darkWidth,65,'/')"
+  (animationCs)="StartAnimation(darkWidth,50,'/cs')"
   (animationPersonal)="undefined"
   ></navbar-component>
   
@@ -53,17 +53,17 @@
         🏃 &nbsp;Course</p>
     </div>
 
-    <div class="col-8 offset-1">
-      <h3>Qui suis-je ?</h3>
+    <div class="col-8 offset-1 dark">
+      <p class="h3">Qui suis-je ?</p>
       <p>Je suis Colin THOMAS, élève étudiant à l'INSA de Lyon, actuellement en échange à NTNU, Trondheim, Norvège.
         <br/>
         Je suis à la recherche d'un P.F.E (Projet de Fin d'Etude), pouvant commencer en février 2024 et durer 6 mois.
       </p>
-      <h4 class="mt-4">Mon parcours scolaire</h4>
-      <img src="./assets/timeline.png" class="timeline"/>
+      <p class="mt-4 h4">Mon parcours scolaire</p>
+      <img src="./assets/timeline.png" class="timeline" (click)="onClickImage()"/>
 
       
-      <h4>Passionné de musique </h4>
+      <p class="h4">Passionné de musique </p>
       <ul>
         <li>
           12 ans de piano en conservatoire

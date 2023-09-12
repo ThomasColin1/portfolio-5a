@@ -6,23 +6,10 @@
     min-height:101%;
     background: linear-gradient(
       to right,
-      #011c24 0%,
-      #011c24 65%,
-      #dbebf1 65%,
-      #dbebf1 100%,
-    );
-}
-#main.main-to-cs {
-    height: 100%;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(
-      to right,
-      #011c24 0%,
-      #011c24 50%,
-      #dbebf1 50%,
-      #dbebf1 100%,
+      #004A5E 0%,
+      #004A5E 65%,
+      #d6dde0 65%,
+      #d6dde0 100%,
     );
 }
 .row {
@@ -52,7 +39,7 @@ p {
 }
 .secondary-color {
     
-    color:#011c24,
+    color:#004A5E,
 }
 .white-link {
     color:white;
@@ -69,8 +56,8 @@ p {
     .profile {
         position: absolute;
         height: 50vw;
-        right:3vw;
-        width:30vw;
+        right:0vw;
+        width:45vw;
         top:25vh;
         
         
@@ -89,18 +76,18 @@ p {
     }
     .pfe{
         position: absolute;
-        background-color: #dbebf1;
-        // border:dashed 2px #011c24;
+        background-color: white;
+        // border:dashed 2px #004A5E;
              text-align: center;
         top:45vh;
         left:15vw;
         width:70vw;
         margin:auto;
     font-size:1.4em;
-    color:#011c24;
+    color:#004A5E;
     padding:1vw;
 	border: 3px solid;
-        border-image: linear-gradient(45deg, #8a9497, #011c24) 1;
+        border-image: linear-gradient(45deg, #b8bec0, #00252f) 1;
     }
     .bottom-row{
         margin-top:35vh;

@@ -4,23 +4,51 @@
   min-height: 101%;
   background: linear-gradient(
     to right,
-    #011c24 0%,
-    #011c24 20%,
-    #dbebf1 20%,
-    #dbebf1 100%,
+    #004A5E 0%,
+    #004A5E 20%,
+    #d6dde0 20%,
+    #d6dde0 100%,
   );
 }
 .timeline {
     width:100%;
+    margin-bottom: 5vh;
 }
 .light {
   p {
     color: white;
   }
 }
+p{
+  
+  color:#004A5E;
+}
+li{
+  
+  color:#004A5E;
+}
 .drapeau {
   font-size: 0.5em;
 }
 .row {
   max-width: 100%;
+}
+
+@media (max-width : 1200px) {
+  .dark{
+    margin-left:5vw;
+    width:50vw;
+  }
+  .light{
+    width:35vw;
+  }
+  .main {
+    background: linear-gradient(
+      to right,
+      #004A5E 0%,
+      #004A5E 40%,
+      #d6dde0 40%,
+      #d6dde0 100%,
+    );
+  }
 }
