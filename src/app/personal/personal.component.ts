@@ -74,8 +74,10 @@ export class PersonalComponent {
     this.scrollable = true;
     
   }
-  @HostListener('mousewheel', ['$event'])
+  @HostListener('wheel', ['$event'])
   onWindowScroll($event:any) {
+    
+    console.log($event)
     if (!this.scrollable){
       return
     }

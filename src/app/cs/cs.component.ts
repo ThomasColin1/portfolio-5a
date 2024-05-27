@@ -67,7 +67,7 @@ export class CsComponent implements OnInit {
       this.personalDarkWidth=40;
     }
   }
-  @HostListener('mousewheel', ['$event'])
+  @HostListener('wheel', ['$event'])
   onWindowScroll($event:any) {
     if (!this.scrollable){
       return

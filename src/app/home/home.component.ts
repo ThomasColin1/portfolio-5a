@@ -64,9 +64,9 @@ export class HomeComponent {
     }
   }
 
-  @HostListener('mousewheel', ['$event'])
+  @HostListener('wheel', ['$event'])
   onWindowScroll($event:any) {
-    // console.log($event)
+    console.log($event)
     if (!this.scrollable){
       return
     }
